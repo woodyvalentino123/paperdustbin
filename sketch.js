@@ -12,9 +12,9 @@ function setup() {
   engine = Engine.create();
   world = engine.world;
   ground = new Ground(600,height,1200,20);
-  box1 = new Box(1000,589,600,400);
-  box2 = new Box1(899,639,20,100);
-  box3 = new Box1(1090,639,20,100);
+  dustbin = new Dustbin(1000,590,200,2);
+  box2 = new Box1(899,590,20,200);
+  box3 = new Box1(1090,590,20,200);
   ball = new Ball(200,675,70,100);
   Engine.run(engine);
   
@@ -27,7 +27,7 @@ function draw() {
   
   drawSprites();
   ground.display();
-  box1.display();
+  dustbin.display();
   //box2.display();
   //box3.display();
  
@@ -37,6 +37,6 @@ function draw() {
 }
 function keyPressed(){
   if(keyCode=== UP_ARROW){
-    Body.applyForce(ball.body,ball.body.position,{x:25,y:-25})
+    Body.applyForce(ball.body,ball.body.position,{x:25,y:-35})
   }
 }
